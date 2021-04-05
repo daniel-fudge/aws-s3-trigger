@@ -4,6 +4,9 @@ Simple repo to test the trigger of an lambda function based off a S3 upload.
 The basic idea is we wish to invoke a lambda function to process any packages uploaded to a S3 `<bucket>/inbox` location.  
 Based on the contents of this package, the lambda function will call the appropriate business logic such as a step function.
 
+## Install AWS CLI 2
+Unfortunately the Cloud9 environment still loads v1 of the AWS CLI. Before going any further, upgrade the latest version with these [instructions](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html). :(
+
 ## Create Lambda Function Role
 We need to create and IAM role that the can be attached to the lambda function when it is deployed. 
 Note the rights in this role may need to be expanded for more complex Lambda functions.  
