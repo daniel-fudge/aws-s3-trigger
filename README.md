@@ -70,8 +70,8 @@ aws lambda update-function-code --function-name  demo-s3-trigger --zip-file file
 We need to create a S3 bucket `<bucket>` to upload files into, mine is `demo-s3-trigger` but your will need a different name. Note if the Lambda function writes to this bucket, you'll get into a 
 very expensive infinite loop. This requires us to have the `inbox` prefix on the uploaded objects. This prefex can be thought of as a folder.
 ```shell
-aws s3api create-bucket --bucket demo-s3-trigger
-aws s3api put-object --bucket demo-s3-trigger --key outbox/
+aws s3api create-bucket --bucket <bucket>
+aws s3api put-object --bucket <bucket> --key inbox/
 ```
 
 
@@ -120,7 +120,7 @@ aws s3api put-bucket-notification-configuration --bucket <bucket> \
 ## Test the S3 upload and Lambda trigger
 ```shell
 echo "foo" > bar.txt
-aws s3 cp bar.txt s3://demo-s3-trigger/inbox/bar.txt
+aws s3 cp bar.txt s3://<bucket>/inbox/bar.txt
 ```
 
 
