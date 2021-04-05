@@ -84,8 +84,8 @@ First we create the `s3-trigger.json` config file as shown below (replace the AR
 {
   "LambdaFunctionConfigurations": [
     {
-      "LambdaFunctionArn": <lambda ARN>,
-      "Events": ["s3:ObjectCreated:*"]
+      "LambdaFunctionArn": "<lambda ARN>",
+      "Events": ["s3:ObjectCreated:*"],
       "Filter": {
           "Key": {
               "FilterRules": [{"Name": "prefix", "Value": "inbox"}]
