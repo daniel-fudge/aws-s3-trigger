@@ -5,7 +5,18 @@ The basic idea is we wish to invoke a lambda function to process any packages up
 Based on the contents of this package, the lambda function will call the appropriate business logic such as a step function.
 
 ## Install AWS CLI 2
-Unfortunately the Cloud9 environment still loads v1 of the AWS CLI. Before going any further, upgrade the latest version with these [instructions](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html). :(
+Unfortunately the Cloud9 environment still loads v1 of the AWS CLI. Before going any further, upgrade the latest version with these [instructions](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html). :(   
+Here are the commands I used.
+```shell
+cd ~
+sudo rm -fr /usr/bin/aws 
+sudo rm -rf /usr/local/aws
+sudo rm -f /usr/local/bin/aws
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo mkdir /usr/local/aws-cli
+sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
+```
 
 ## Create Lambda Function Role
 We need to create and IAM role that the can be attached to the lambda function when it is deployed. 
