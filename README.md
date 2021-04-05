@@ -52,7 +52,7 @@ aws iam attach-role-policy --role-name lambda-demo --policy-arn arn:aws:iam::aws
 ## Create Lambda to read the object 
 The following commands will create the simple lambda function.
 ```shell
-zip package.zip lambda_handler.py
+zip package.zip lambda_function.py
 aws lambda create-function \
   --function-name demo-s3-trigger \
   --role arn:aws:iam::<your account id>:role/lambda-demo \
