@@ -4,6 +4,8 @@ Simple repo to test the trigger of an lambda function based off a S3 upload.
 The basic idea is we wish to invoke a lambda function to process any packages uploaded to a S3 `<bucket>/inbox` location.  
 Based on the contents of this package, the lambda function will call the appropriate business logic such as a step function.
 
+A video walk through can be found [here](https://youtu.be/g43KfkaoFac).
+
 ## Install AWS CLI 2
 Unfortunately the Cloud9 environment still loads v1 of the AWS CLI. Before going any further, upgrade the latest version with these [instructions](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html). :(   
 Here are the commands I used.
@@ -125,6 +127,7 @@ aws s3 cp bar.txt s3://<bucket>/inbox/bar.txt
 
 
 ## References
+- [Video Walk Through](https://youtu.be/g43KfkaoFac)
 - [C++ Lambda Function with Python Handler](https://github.com/daniel-fudge/aws-lambda-cpp-python#make-iam-role-for-the-lambda-function)
 - [Cloud9 C++ Lambda Repo](https://github.com/daniel-fudge/aws-lambda-cpp-cloud9)
 - [AWS CLI - Installation](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html)
